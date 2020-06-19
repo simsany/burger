@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_ARP5efbBndf3S17LhqB0Q");
+   })();
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div  >
+        <form>
+            <div class="container-fluid">
+                <label for="name">Név: *</label><br>
+                <input  class="form-control-xs" id="name" name="name" type="text" required>
+            </div>
+            <div class="container-fluid">
+                <label for="email">Email cím: *</label><br>
+                <input class="form-control-xs" id="Email" name="Email" type="email" required>
+            </div>
+            <div class="container-fluid">
+                <label for="address">Cím: *</label><br>
+                <input class="form-control-xs"  id="address" name="address" type="text" required>
+            </div>
+            <div class="container-fluid">
+                <label>Megjegyzés: *</label><br>
+                <textarea class="form-control-xs"  id="comment" name="comment" rows="5"></textarea>
+            </div><br>
+            <fieldset class="container-fluid">
+                <legend>Személyes Adatok</legend>
+            <span>Extra feltét:</span>
+            <div >
+                <input   checked id="nothing" name="extra" type="radio" value="0">
+                <label for="nothing">Nem kérek</label>
+            </div>
+            <div>
+                <input id="cheese" name="extra" type="radio" value="300">
+                <label for="cheese">Cheese</label>
+            </div>
+            <div>
+                <input id="meet" name="extra" type="radio" value="300">
+                <label for="meet">Meet</label>
+            </div>
+            <div>
+                <input id="double-meat" name="extra" type="radio" value="300">
+                <label for="double-meat">Double-meat</label>
+                <div>
+                    <input id="Double-cheese" name="extra" type="radio" value="300">
+                    <label for="Double-cheese">Double-cheese</label>
+                </div>
+                <div>
+                    <input id="hagyma" name="extra" type="radio" value="300">
+                    <label for="hagyma">Hagyma</label>
+                </div>
+                <div class="topping">
+                </div>
+                
+            </fieldset>
+        </div>
+        <fieldset class="container-fluid">
+            <legend>Termék Adatai</legend>
+            
+            <label for="sauce">Szósz</label></label><br>
+            <select id="sauce" name="sauce">
+                <option  value="0" selected>barbecue</option>
+                <option  value="100">csípős</option>
+            </select>
+            <div >
+                <label for="quantity">Mennyiség</label></label><br>
+                <input id="quantity" name="quantity" type="number" min="1" max="10" ></label>
+                <div><br>
+                    <input class="btn btn-info"type="button" onclick="calcAmount()" value="Ár kiszámítása"><br>Ár: <span class="show-amount">0</span><span>Ft</span>
+                </div><br>
+                <div>
+                    <input class="btn btn-info" type="button" onclick="sendEmail() " value="Rendelés leadás"> 
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</form>
+    <script src="js\main.js"></script>
+</body>
+<style>
+    legend{color:black}
+.container-fluid{margin-left: 100px;}
+body{margin-top:50px; color:black;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-darkblue);
+  background-image: linear-gradient(
+      115deg,
+     rgba(200, 85, 11, 0.3),
+      rgba(120, 50, 7, 0.2)
+    ),
+    url(https://thecookreport.co.uk/wp-content/uploads/2018/09/Beetroot-Burger-11.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+</style>
+</html>
