@@ -31,7 +31,7 @@ function showSumPrice(price, amountNumber,amountInputSauce,amountInputExtra) {
         alert("Minimum 1 terméket kell vásárolnia!");
         return amount;
     } else {
-        let amount = amountNumber * price+amountInputSauce+amountInputExtra;
+        let amount = amountNumber * price+amountInputSauce*parseInt(document.querySelector("input[name='quantity']").value)+amountInputExtra*parseInt(document.querySelector("input[name='quantity']").value);
         showAmount.innerHTML = amount;
 return amount;
     }
