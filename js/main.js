@@ -23,19 +23,7 @@ for (i = 0; i < radio.length; i++) {
 }
 
 
-var myForm = document.getElementById('my-form');
 
-// Add a listener to the submit event
-myForm.addEventListener('submit', function (e) {
-    var errors = [];
-
-    // Check inputs...
-
-    if(errors.length) {
-        document.querySelector("span.show-amount").innerHTML=0; // The browser will not make the HTTP POST request
-        
-    }else{calcAmount()}
-});
 
 
 
