@@ -28,7 +28,7 @@
 
 <body>
     <div  >
-        <form>
+    <form  target="frame" onsubmit="calcAmount()" >
             <div class="container-fluid">
                 <label for="name">Név: *</label><br>
                 <input  class="form-control-xs" id="name" name="name" type="text" required>
@@ -43,7 +43,7 @@
             </div>
             <div class="container-fluid">
                 <label>Megjegyzés: *</label><br>
-                <textarea class="form-control-xs"  id="comment" name="comment" rows="5"></textarea>
+                <textarea class="form-control-xs"  id="comment" name="comment" rows="5" required></textarea>
             </div><br>
             <fieldset class="container-fluid">
                 <legend>Személyes Adatok</legend>
@@ -86,9 +86,9 @@
             </select>
             <div >
                 <label for="quantity">Mennyiség</label></label><br>
-                <input id="quantity" name="quantity" type="number" min="1" max="10" ></label>
+                <input id="quantity" value="1" name="quantity" type="number" min="1" max="10"  ></label>
                 <div><br>
-                    <input class="btn btn-info"type="button" onclick="calcAmount()" value="Ár kiszámítása"><br>Ár: <span class="show-amount">0</span><span>Ft</span>
+                <input onclick="showSumPrice(0,0,0,0)" class="btn btn-info"type="submit"  value="Ár kiszámítása"><br>Ár: <span id="show-amount" class="show-amount" required>0</span><span>Ft</span>
                 </div><br>
                 <div>
                     <input class="btn btn-info" type="button" onclick="sendEmail() " value="Rendelés leadás"> 
@@ -98,6 +98,8 @@
     </div>
 </form>
     <script src="js\main.js"></script>
+    <iframe name="frame">
+    </iframe>
 </body>
 <style>
     legend{color:black}
@@ -123,5 +125,6 @@ body::before {
   background-repeat: no-repeat;
   background-position: center;
 }
+iframe{display:none;}
 </style>
 </html>

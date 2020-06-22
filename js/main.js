@@ -22,19 +22,37 @@ for (i = 0; i < radio.length; i++) {
     return showSumPrice(price, amountNumber,amountInputSauce,amountInputExtra);
 }
 
+
+var myForm = document.getElementById('my-form');
+
+// Add a listener to the submit event
+myForm.addEventListener('submit', function (e) {
+    var errors = [];
+
+    // Check inputs...
+
+    if(errors.length) {
+        document.querySelector("span.show-amount").innerHTML=0; // The browser will not make the HTTP POST request
+        
+    }else{calcAmount()}
+});
+
+
+
+
 function showSumPrice(price, amountNumber,amountInputSauce,amountInputExtra) {
     let showAmount = document.querySelector("span.show-amount");
-    if (amountNumber > 10) {
+    /*if (amountNumber > 10) {
         alert("Maximum 10 terméket vásárolhat!");
         return amount;
     } else if (amountNumber < 1) {
         alert("Minimum 1 terméket kell vásárolnia!");
         return amount;
-    } else {
+    } else {}*/
         let amount = amountNumber * price+amountInputSauce*parseInt(document.querySelector("input[name='quantity']").value)+amountInputExtra*parseInt(document.querySelector("input[name='quantity']").value);
         showAmount.innerHTML = amount;
 return amount;
-    }
+    
 
 }
 
