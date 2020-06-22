@@ -3,7 +3,7 @@ var extraName="";
 function calcAmount() {
     let price = 1000;
     let amountInput = document.querySelector("input[name='quantity']");
-    //let amountInputExtra = parseInt(document.querySelector("input[name='extra'][checked='true']").value);
+    
 let amountInputSauce=document.querySelector("select[name='sauce']").selectedIndex;
 amountInputSauce = parseInt(document.getElementsByTagName("option")[amountInputSauce].value);
     let amountNumber = parseInt(amountInput.value);
