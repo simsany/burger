@@ -134,18 +134,28 @@
         color: black
     }
 
-    body {height: 100%;
-        width: 100%;
-        
+    body {
         color: black;
+        padding: 20px 0 20px 20px;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+       
+       
+        background-image: linear-gradient(115deg,
+                rgba(200, 85, 11, 0.3),
+                rgba(120, 50, 7, 0.2)),
+            url(Beetroot-Burger-11.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        background-image: 
-            url(Beetroot-Burger-11.jpg);
     }
-
-    
 
     .show-amount {
         margin-left: 5px;
@@ -160,7 +170,6 @@
     }
 
     html{height:100%;}
-    form {padding: 20px 0 20px 500px;}
 </style>
 
 </html>
